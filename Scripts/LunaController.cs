@@ -5,9 +5,11 @@ using UnityEngine;
 public class LunaController : MonoBehaviour
 {
     private Rigidbody2D rigidbody2d;
-    public float moveSpeed = 4f;
-    private int maxHealth = 5;
-    private int currentHealth;
+    public float moveSpeed = 3f;
+    public int maxHealth;
+    public int MaxHealth { get { return maxHealth; } }
+    public int currentHealth;
+    public int CurrentHealth { get { return currentHealth; } }
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +17,8 @@ public class LunaController : MonoBehaviour
         //帧率控制：90帧
         Application.targetFrameRate = 90;
         rigidbody2d = GetComponent<Rigidbody2D>();
-        currentHealth = maxHealth;
+        maxHealth = 5;
+        currentHealth = 0;
     }
 
     // Update is called once per frame
@@ -29,11 +32,13 @@ public class LunaController : MonoBehaviour
         //调整Luna的位置
         position.x = position.x + moveSpeed * horizontal * Time.deltaTime;
         position.y = position.y + moveSpeed * vertical * Time.deltaTime;
-        //transform.position = position;
+        
         rigidbody2d.MovePosition(position);
+  
     }
 
-    private void ChangeHealth(int amount)
+    //改变生命值
+    public void ChangeHealth(int amount)
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         Debug.Log(currentHealth+"/"+maxHealth);

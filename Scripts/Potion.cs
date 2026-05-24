@@ -6,6 +6,12 @@ public class Potion : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log($"{collision}拾取了血瓶");
+        LunaController lunaController = collision.GetComponent<LunaController>();
+        if (lunaController != null && lunaController.CurrentHealth < lunaController.MaxHealth)
+        {
+            lunaController.ChangeHealth(1);
+            Destroy(gameObject);
+        }
+        
     }
 }
