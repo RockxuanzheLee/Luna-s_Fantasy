@@ -10,6 +10,7 @@ public class LunaController : MonoBehaviour
     public int MaxHealth { get { return maxHealth; } }
     public int currentHealth;
     public int CurrentHealth { get { return currentHealth; } }
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,8 @@ public class LunaController : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         maxHealth = 5;
         currentHealth = 0;
+        animator = GetComponentInChildren<Animator>();
+        animator.SetFloat("MoveValue",0.5f);
     }
 
     // Update is called once per frame

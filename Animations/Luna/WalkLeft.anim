@@ -29,7 +29,7 @@ AnimationClip:
     - time: 0.25
       value: {fileID: -1465578500, guid: 50c14785c39137240b0a16ec6afa24ec, type: 3}
     attribute: m_Sprite
-    path: LunaSprite
+    path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -41,7 +41,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3068909329
+      path: 0
       attribute: 0
       script: {fileID: 0}
       typeID: 212

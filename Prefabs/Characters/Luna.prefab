@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2978373599797098834}
   - component: {fileID: 8518707207853091008}
   - component: {fileID: 5623539261861226387}
-  - component: {fileID: 4931302840027608646}
   m_Layer: 0
   m_Name: Luna
   m_TagString: Untagged
@@ -123,27 +122,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.23631811, y: 0.12852192}
   m_EdgeRadius: 0
---- !u!95 &4931302840027608646
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3017544803223409139}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3e34e31386fb89746aecb25c1fca97cb, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4720175795648806072
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,13 +23,13 @@ AnimationClip:
     - time: 0
       value: {fileID: 926243146, guid: 50c14785c39137240b0a16ec6afa24ec, type: 3}
     - time: 0.083333336
-      value: {fileID: 926243146, guid: 50c14785c39137240b0a16ec6afa24ec, type: 3}
+      value: {fileID: -186760764, guid: 50c14785c39137240b0a16ec6afa24ec, type: 3}
     - time: 0.16666667
       value: {fileID: 1572007268, guid: 50c14785c39137240b0a16ec6afa24ec, type: 3}
     - time: 0.25
       value: {fileID: -1783115092, guid: 50c14785c39137240b0a16ec6afa24ec, type: 3}
     attribute: m_Sprite
-    path: LunaSprite
+    path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -41,7 +41,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3068909329
+      path: 0
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -51,7 +51,7 @@ AnimationClip:
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
     - {fileID: 926243146, guid: 50c14785c39137240b0a16ec6afa24ec, type: 3}
-    - {fileID: 926243146, guid: 50c14785c39137240b0a16ec6afa24ec, type: 3}
+    - {fileID: -186760764, guid: 50c14785c39137240b0a16ec6afa24ec, type: 3}
     - {fileID: 1572007268, guid: 50c14785c39137240b0a16ec6afa24ec, type: 3}
     - {fileID: -1783115092, guid: 50c14785c39137240b0a16ec6afa24ec, type: 3}
   m_AnimationClipSettings:

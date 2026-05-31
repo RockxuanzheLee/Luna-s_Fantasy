@@ -27,9 +27,9 @@ AnimationClip:
     - time: 0.16666667
       value: {fileID: -494597283, guid: 50c14785c39137240b0a16ec6afa24ec, type: 3}
     - time: 0.25
-      value: {fileID: -494597283, guid: 50c14785c39137240b0a16ec6afa24ec, type: 3}
+      value: {fileID: -1681642053, guid: 50c14785c39137240b0a16ec6afa24ec, type: 3}
     attribute: m_Sprite
-    path: LunaSprite
+    path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -41,7 +41,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3068909329
+      path: 0
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -53,7 +53,7 @@ AnimationClip:
     - {fileID: 1377232736, guid: 50c14785c39137240b0a16ec6afa24ec, type: 3}
     - {fileID: -1277059489, guid: 50c14785c39137240b0a16ec6afa24ec, type: 3}
     - {fileID: -494597283, guid: 50c14785c39137240b0a16ec6afa24ec, type: 3}
-    - {fileID: -494597283, guid: 50c14785c39137240b0a16ec6afa24ec, type: 3}
+    - {fileID: -1681642053, guid: 50c14785c39137240b0a16ec6afa24ec, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
