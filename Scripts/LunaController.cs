@@ -21,7 +21,7 @@ public class LunaController : MonoBehaviour
         maxHealth = 5;
         currentHealth = 0;
         animator = GetComponentInChildren<Animator>();
-        animator.SetFloat("MoveValue",0.5f);
+        //animator.SetFloat("MoveValue",0.5f);
     }
     
     // Update is called once per frame
