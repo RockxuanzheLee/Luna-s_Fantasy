@@ -10,7 +10,8 @@ AnimatorState:
   m_Name: Run
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions: []
+  m_Transitions:
+  - {fileID: 937734365628157849}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -72,7 +73,7 @@ AnimatorStateMachine:
     m_Position: {x: 440, y: 110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -9145747463907311511}
-    m_Position: {x: 680, y: 200, z: 0}
+    m_Position: {x: 700, y: 210, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4812806549229691187}
     m_Position: {x: 450, y: 300, z: 0}
@@ -158,8 +159,8 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: LookX
     m_Mirror: 0
-  m_BlendParameter: LookX
-  m_BlendParameterY: LookY
+  m_BlendParameter: Look X
+  m_BlendParameterY: Look Y
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -250,13 +251,13 @@ AnimatorController:
   m_Name: Luna
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: LookX
+  - m_Name: Look X
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: LookY
+  - m_Name: Look Y
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -293,6 +294,56 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+--- !u!1101 &937734365628157849
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 4
+    m_ConditionEvent: MoveValue
+    m_EventTreshold: 1.1
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 7319940569368887889}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 1
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1101 &1036577328136282179
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 3
+    m_ConditionEvent: MoveValue
+    m_EventTreshold: 1.1
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -9145747463907311511}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 1
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!206 &1393348073204034645
 BlendTree:
   m_ObjectHideFlags: 1
@@ -365,8 +416,8 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: LookX
     m_Mirror: 0
-  m_BlendParameter: LookX
-  m_BlendParameterY: LookY
+  m_BlendParameter: Look X
+  m_BlendParameterY: Look Y
   m_MinThreshold: 0
   m_MaxThreshold: 7
   m_UseAutomaticThresholds: 0
@@ -439,8 +490,8 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: LookX
     m_Mirror: 0
-  m_BlendParameter: LookX
-  m_BlendParameterY: LookY
+  m_BlendParameter: Look X
+  m_BlendParameterY: Look Y
   m_MinThreshold: 0
   m_MaxThreshold: 0.6
   m_UseAutomaticThresholds: 1
@@ -486,8 +537,8 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: LookX
     m_Mirror: 0
-  m_BlendParameter: LookX
-  m_BlendParameterY: LookY
+  m_BlendParameter: Look X
+  m_BlendParameterY: Look Y
   m_MinThreshold: 0
   m_MaxThreshold: 0.6
   m_UseAutomaticThresholds: 1
@@ -565,8 +616,8 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: LookX
     m_Mirror: 0
-  m_BlendParameter: LookX
-  m_BlendParameterY: LookY
+  m_BlendParameter: Look X
+  m_BlendParameterY: Look Y
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -584,6 +635,7 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -4333494054241546193}
+  - {fileID: 1036577328136282179}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
