@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 155749016}
   - component: {fileID: 155749015}
   - component: {fileID: 155749017}
+  - component: {fileID: 155749018}
   m_Layer: 0
   m_Name: Horse
   m_TagString: Untagged
@@ -252,6 +253,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.176819, y: 0.75720406}
   m_EdgeRadius: 0
+--- !u!95 &155749018
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155749014}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a89a6562a757c3f4c908cf5b9b0cf446, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &304449555
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1757,6 +1779,7 @@ GameObject:
   - component: {fileID: 1836302479}
   - component: {fileID: 1836302480}
   - component: {fileID: 1836302481}
+  - component: {fileID: 1836302482}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Untagged
@@ -1876,6 +1899,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.053266, y: 0.13959599}
   m_EdgeRadius: 0
+--- !u!95 &1836302482
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836302478}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 62f0c122d7c91fe41aab21086c9eb942, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1881770218
 GameObject:
   m_ObjectHideFlags: 0
@@ -1887,6 +1931,7 @@ GameObject:
   - component: {fileID: 1881770219}
   - component: {fileID: 1881770220}
   - component: {fileID: 1881770221}
+  - component: {fileID: 1881770222}
   m_Layer: 0
   m_Name: Nala
   m_TagString: Untagged
@@ -2006,6 +2051,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8959489, y: 0.17456913}
   m_EdgeRadius: 0
+--- !u!95 &1881770222
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881770218}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 55416f5a438fa314184d1a2a10c8c3ec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &2009213110 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1492186494701866499, guid: 95fa06acd2c170945b8665e503464df3, type: 3}
