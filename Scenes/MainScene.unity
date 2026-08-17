@@ -2953,6 +2953,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Luna
       objectReference: {fileID: 0}
+    - target: {fileID: 3017544803223409139, guid: 95fa06acd2c170945b8665e503464df3, type: 3}
+      propertyPath: m_TagString
+      value: Luna
+      objectReference: {fileID: 0}
     - target: {fileID: 5623539261861226387, guid: 95fa06acd2c170945b8665e503464df3, type: 3}
       propertyPath: m_Size.x
       value: 0.29330492

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5623539261861226387}
   m_Layer: 0
   m_Name: Luna
-  m_TagString: Untagged
+  m_TagString: Luna
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e76ce21702da9b4eb925a322357a89d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  maxHealth: 0
+  moveSpeed: 2
+  maxHealth: 5
   currentHealth: 0
 --- !u!50 &8518707207853091008
 Rigidbody2D:
