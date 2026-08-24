@@ -8,13 +8,13 @@ public class Potion : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        LunaController lunaController = collision.GetComponent<LunaController>();
-        if (lunaController != null && lunaController.CurrentHealth < lunaController.MaxHealth)
+        if (GameManager.Instance.CurrentHealth < GameManager.Instance.MaxHealth)
         {
-            lunaController.ChangeHealth(1);
+            GameManager.Instance.ChangeHealth(1);
             Instantiate(effectGo, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
-        
+
     }
 }
+

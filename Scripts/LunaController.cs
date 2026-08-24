@@ -6,10 +6,7 @@ public class LunaController : MonoBehaviour
 {
     private Rigidbody2D rigidbody2d;
     public float moveSpeed = 2f;
-    public int maxHealth;
-    public int MaxHealth { get { return maxHealth; } }
-    public int currentHealth;
-    public int CurrentHealth { get { return currentHealth; } }
+    
     private Animator animator;
     private Vector2 lookDirection = new Vector2(1, 0);
     private float moveScale;
@@ -18,12 +15,10 @@ public class LunaController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //帧率控制：90帧
+        //帧率控制：165帧
         Application.targetFrameRate = 165;
 
         rigidbody2d = GetComponent<Rigidbody2D>();
-        maxHealth = 5;
-        currentHealth = 0;
         animator = GetComponentInChildren<Animator>();
     }
     
@@ -69,14 +64,6 @@ public class LunaController : MonoBehaviour
         position = position + move * moveSpeed * Time.fixedDeltaTime;
         rigidbody2d.MovePosition(position);
     }
-
-    //改变生命值
-    public void ChangeHealth(int amount)
-    {
-        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
-        Debug.Log(currentHealth+"/"+maxHealth);
-    }
-
     public void Climb(bool start) 
     { 
         animator.SetBool("Climb", start);
