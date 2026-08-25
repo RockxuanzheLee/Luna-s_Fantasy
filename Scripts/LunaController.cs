@@ -68,4 +68,10 @@ public class LunaController : MonoBehaviour
     { 
         animator.SetBool("Climb", start);
     }
+
+    public void Jump(bool start)
+    {
+        animator.SetBool("Jump", start);
+        rigidbody2d.simulated = !start;
+    }
 }
