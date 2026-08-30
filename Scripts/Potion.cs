@@ -8,9 +8,9 @@ public class Potion : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (GameManager.Instance.CurrentHealth < GameManager.Instance.MaxHealth)
+        if (GameManager.Instance.lunaCurrentHP < GameManager.Instance.lunaHP)
         {
-            GameManager.Instance.ChangeHealth(1);
+            GameManager.Instance.AddOrDecreaseHP(1);
             Instantiate(effectGo, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

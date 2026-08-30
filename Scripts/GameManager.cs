@@ -1,26 +1,73 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public int maxHealth;
-    public int MaxHealth { get { return maxHealth; } }
-    public int currentHealth;
-    public int CurrentHealth { get { return currentHealth; } }
+    public int lunaHP;
+    public int lunaCurrentHP;
+    public int lunaMP;
+    public int lunaCurrentMP;
+    public GameObject battleGo;
+
 
     private void Awake()
     {
         Instance = this;
-        maxHealth = 5;
-        currentHealth = 0;
+        lunaHP = 5;
+        lunaCurrentHP = 0;
     }
 
-    //改变生命值
-    public void ChangeHealth(int amount)
+    public void EnterOrExitBattle(bool enter = true)
     {
-        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
-        Debug.Log(currentHealth + "/" + maxHealth);
+        battleGo.SetActive(enter);
+    }
+
+    /// <summary>
+    /// luna血量改变
+    /// </summary>
+    /// <param name="Value">改变值</param>
+    public void AddOrDecreaseHP(int Value)
+    {
+        lunaCurrentHP += Value;
+        if (lunaCurrentHP >= lunaHP)
+        {
+            lunaCurrentHP = lunaHP;
+        }
+        else if(lunaCurrentHP <= 0)
+        {
+            lunaCurrentHP = 0;
+        }
+        UIManager.Instance.SetHPValue((float)lunaCurrentHP / lunaHP);
+    }
+
+    /// <summary>
+    /// luna蓝量改变
+    /// </summary>
+    /// <param name="Value">改变值</param>
+    public void AddOrDecreaseMP(int Value)
+    {
+        lunaCurrentMP += Value;
+        if (lunaCurrentMP >= lunaMP)
+        {
+            lunaCurrentMP = lunaMP;
+        }
+        else if (lunaCurrentMP <= 0)
+        {
+            lunaCurrentMP = 0;
+        }
+        UIManager.Instance.SetMPValue((float)lunaCurrentMP / lunaMP);
+    }
+
+    /// <summary>
+    /// 是否可以使用技能
+    /// </summary>
+    /// <param name="value">技能消耗蓝量</param>
+    /// <returns></returns>
+    public bool CanUsePlayerMP(int value)
+    {
+        return lunaCurrentMP >= value;
     }
 }

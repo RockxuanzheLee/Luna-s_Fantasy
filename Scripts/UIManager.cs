@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public Image hpMaskImage;
     public Image mpMaskImage;
     private float originalSize;
+    public GameObject battlePanelGo;
 
     // Start is called before the first frame update
     void Awake()
@@ -35,5 +36,10 @@ public class UIManager : MonoBehaviour
     {
         mpMaskImage.rectTransform.SetSizeWithCurrentAnchors(
             RectTransform.Axis.Horizontal,fillPercent * originalSize);
+    }
+
+    public void ShowOrHideBattlePanel(bool show)
+    {
+        battlePanelGo.SetActive(show);
     }
 }
