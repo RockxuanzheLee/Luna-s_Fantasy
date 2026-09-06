@@ -54,6 +54,7 @@ public class EnemyController : MonoBehaviour
         if (collision.transform.CompareTag("Luna"))
         {
             GameManager.Instance.EnterOrExitBattle(true);
+            UIManager.Instance.ShowOrHideBattlePanel(true);
         }
     }
 }

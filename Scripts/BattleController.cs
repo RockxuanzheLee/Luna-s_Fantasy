@@ -13,6 +13,7 @@ public class BattleController : MonoBehaviour
     public SpriteRenderer monsterSr;
     public SpriteRenderer lunaSr;
     public GameObject skillEffectGo;
+    public GameObject healEffectGo;
 
     private void Awake()
     {
@@ -54,7 +55,7 @@ public class BattleController : MonoBehaviour
                     lunaAnimater.SetBool("MoveState", false);
                     lunaAnimater.SetFloat("MoveValue", 0f);
                     lunaAnimater.CrossFade("Attack", 0.0f);
-                    monsterSr.DOFade(0.3f, 0.5f).OnComplete(() => JudgeMonsterHP(20));
+                    monsterSr.DOFade(0.3f, 0.5f).OnComplete(() => JudgeMonsterHP(-20));
                 }
             );
         yield return new WaitForSeconds(1.167f);
@@ -70,11 +71,14 @@ public class BattleController : MonoBehaviour
                 }
             );
         yield return new WaitForSeconds(0.5f);
-        StartCoroutine(PerformMonsterLogic());
+        StartCoroutine(MonsterAttack());
     }
 
-    /// 怪物攻击逻辑
-    IEnumerator PerformMonsterLogic()
+    /// <summary>
+    /// 怪物攻击逻辑 (通用)
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator MonsterAttack()
     {
         monsterTrans.DOLocalMove(lunaInitPos + new Vector3(-1.5f, 0f, 0f), 0.5f);
         yield return new WaitForSeconds(0.5f);
@@ -85,7 +89,7 @@ public class BattleController : MonoBehaviour
                     monsterTrans.DOLocalMove(lunaInitPos + new Vector3(-1.5f, 0f, 0f), 0.2f);
                     lunaAnimater.CrossFade("Hit", 0.0f);
                     lunaSr.DOFade(0.3f, 0.25f).OnComplete( () => {lunaSr.DOFade(1f, 0.25f);} );
-                    JudgePlayerHP(20);
+                    JudgePlayerHP(-20);
                 }
             );
         yield return new WaitForSeconds(0.6f);
@@ -146,25 +150,70 @@ public class BattleController : MonoBehaviour
         lunaAnimater.CrossFade("Skill",0.0f);
         GameManager.Instance.AddOrDecreaseMP(-30);
         yield return new WaitForSeconds(0.3f);
-        Instantiate(skillEffectGo,monsterInitPos, UnityEngine.Quaternion.identity);
+        GameObject go = Instantiate(skillEffectGo,monsterTrans);
+        go.transform.localPosition = Vector3.zero;
+        yield return new WaitForSeconds(0.4f);
+        monsterSr.DOFade(0.3f, 0.2f).OnComplete(() => { JudgeMonsterHP(-40); });
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(MonsterAttack());
+    }
 
+    /// <summary>
+    /// Luna回血
+    /// </summary>
+    /// <returns></returns>
+    public void LunaRecoverHP()
+    {
+        if (!GameManager.Instance.CanUsePlayerMP(50))
+        {
+            return;
+        }
+        StartCoroutine(PerformRecoverHPLOgic());
+    }
+
+    IEnumerator PerformRecoverHPLOgic()
+    {
+        UIManager.Instance.ShowOrHideBattlePanel(false);
+        lunaAnimater.CrossFade("RecoverHP",0.0f);
+        GameManager.Instance.AddOrDecreaseMP(-50);
+        yield return new WaitForSeconds(0.1f);
+        GameObject go = Instantiate(healEffectGo, lunaTrans);
+        go.transform.localPosition = Vector3.zero;
+        GameManager.Instance.AddOrDecreaseHP(40);
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(MonsterAttack());
     }
 
     /// <summary>
     /// 修改玩家血量
     /// </summary>
-    /// <param name="value">减少的血量</param>
-    public void JudgeMonsterHP(int value = 0)
+    /// <param name="value">改变的血量</param>
+    public void JudgePlayerHP(int value = 0)
     {
-        monsterSr.DOFade(1f, 0.5f);
+        GameManager.Instance.AddOrDecreaseHP(value);
+        if (GameManager.Instance.lunaCurrentHP <= 0)
+        {
+            lunaAnimater.CrossFade("Die", 0.0f);
+            lunaSr.DOFade(0.0f, 0.8f).OnComplete(() => { GameManager.Instance.EnterOrExitBattle(false); });
+            UIManager.Instance.ShowOrHideBattlePanel(false);
+        }
     }
 
     /// <summary>
     /// 修改怪物血量
     /// </summary>
-    /// <param name="value">减少的血量</param>
-    public void JudgePlayerHP(int value = 0)
+    /// <param name="value">改变的血量</param>
+    public void JudgeMonsterHP(int value = 0)
     {
-        
+        monsterSr.DOFade(1f, 0.5f);
+        if (GameManager.Instance.AddOrDecreaseMonsterHP(value) <= 0)
+        {
+            monsterSr.DOFade(0.0f, 0.6f).OnComplete(() => { GameManager.Instance.EnterOrExitBattle(false); });
+            UIManager.Instance.ShowOrHideBattlePanel(false);
+        }
+        else
+        { 
+            monsterSr.DOFade(1f, 0.2f);
+        }
     }
 }

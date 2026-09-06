@@ -6,18 +6,21 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public GameObject battleGo;
     public int lunaHP;
     public int lunaCurrentHP;
     public int lunaMP;
     public int lunaCurrentMP;
-    public GameObject battleGo;
-
+    public int monsterCurrentHP;
 
     private void Awake()
     {
         Instance = this;
-        lunaHP = 5;
-        lunaCurrentHP = 0;
+        lunaHP = 100;
+        lunaCurrentHP = 100;
+        lunaMP = 100;
+        lunaCurrentMP = 100;
+        monsterCurrentHP = 50;
     }
 
     public void EnterOrExitBattle(bool enter = true)
@@ -69,5 +72,15 @@ public class GameManager : MonoBehaviour
     public bool CanUsePlayerMP(int value)
     {
         return lunaCurrentMP >= value;
+    }
+
+    /// <summary>
+    /// 怪物血量改变
+    /// </summary>
+    /// <param name="value"></param>
+    public int AddOrDecreaseMonsterHP(int value = 0)
+    {
+        monsterCurrentHP += value;
+        return monsterCurrentHP;
     }
 }

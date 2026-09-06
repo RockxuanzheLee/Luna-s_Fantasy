@@ -974,7 +974,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 348642268}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1737381367}
+        m_TargetAssemblyTypeName: BattleController, Assembly-CSharp
+        m_MethodName: LunaRecoverHP
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &348642268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3260,11 +3272,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7fa46cf0faacb49aaac3e0fc06e02d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  battleGo: {fileID: 1737381364}
   lunaHP: 0
   lunaCurrentHP: 0
   lunaMP: 0
   lunaCurrentMP: 0
-  battleGo: {fileID: 1737381364}
+  monsterCurrentHP: 0
 --- !u!4 &1207163387
 Transform:
   m_ObjectHideFlags: 0
@@ -4457,7 +4470,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1472632722}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1737381367}
+        m_TargetAssemblyTypeName: BattleController, Assembly-CSharp
+        m_MethodName: LunaUseSkill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1472632722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5586,6 +5611,7 @@ MonoBehaviour:
   monsterSr: {fileID: 2019316422}
   lunaSr: {fileID: 1268931479}
   skillEffectGo: {fileID: 3418253307427816719, guid: 4a64099e70582f14aade241cbe81ff7f, type: 3}
+  healEffectGo: {fileID: 7742526368970561301, guid: 09b0e9770aacb014d8cd173b91a1c910, type: 3}
 --- !u!1 &1749823629
 GameObject:
   m_ObjectHideFlags: 3
