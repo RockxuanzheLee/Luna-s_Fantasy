@@ -21,6 +21,14 @@ public class BattleController : MonoBehaviour
         lunaInitPos = lunaTrans.localPosition;
     }
 
+    private void OnEnable()
+    {
+        monsterTrans.localPosition = monsterInitPos;
+        lunaTrans.localPosition = lunaInitPos;
+        monsterSr.DOFade(1f, 0.01f);
+        lunaSr.DOFade(1f, 0.01f);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -104,6 +112,7 @@ public class BattleController : MonoBehaviour
         StartCoroutine(PerformDefendLogic());
     }
 
+    //luna防御逻辑
     IEnumerator PerformDefendLogic()
     {
         UIManager.Instance.ShowOrHideBattlePanel(false);
@@ -144,6 +153,7 @@ public class BattleController : MonoBehaviour
         StartCoroutine(PerformSkillLogic());
     }
 
+    //luna技能逻辑
     IEnumerator PerformSkillLogic()
     {
         UIManager.Instance.ShowOrHideBattlePanel(false);
@@ -171,6 +181,7 @@ public class BattleController : MonoBehaviour
         StartCoroutine(PerformRecoverHPLOgic());
     }
 
+    ///luna回血逻辑
     IEnumerator PerformRecoverHPLOgic()
     {
         UIManager.Instance.ShowOrHideBattlePanel(false);
@@ -182,6 +193,23 @@ public class BattleController : MonoBehaviour
         GameManager.Instance.AddOrDecreaseHP(40);
         yield return new WaitForSeconds(0.5f);
         StartCoroutine(MonsterAttack());
+    }
+
+    /// <summary>
+    /// Luna逃跑
+    /// </summary>
+    public void LunaEscape()
+    {
+        UIManager.Instance.ShowOrHideBattlePanel(false);
+        lunaTrans.DOLocalMove(lunaInitPos + new Vector3(5f, 0f, 0f), 0.5f).OnComplete
+            (
+                () =>
+                {
+                    GameManager.Instance.EnterOrExitBattle(false);
+                }
+            );
+        lunaAnimater.SetBool("MoveState", true);
+        lunaAnimater.SetFloat("MoveValue", 1f);
     }
 
     /// <summary>

@@ -15,9 +15,6 @@ public class LunaController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //帧率控制：165帧
-        Application.targetFrameRate = 165;
-
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
     }
@@ -64,6 +61,7 @@ public class LunaController : MonoBehaviour
         position = position + move * moveSpeed * Time.fixedDeltaTime;
         rigidbody2d.MovePosition(position);
     }
+
     public void Climb(bool start) 
     { 
         animator.SetBool("Climb", start);

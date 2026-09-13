@@ -21,11 +21,18 @@ public class GameManager : MonoBehaviour
         lunaMP = 100;
         lunaCurrentMP = 100;
         monsterCurrentHP = 50;
+
+        //帧率控制：165帧
+        Application.targetFrameRate = 165;
+
+        EnterOrExitBattle(false);
     }
 
-    public void EnterOrExitBattle(bool enter = true)
+    //设置战斗状态
+    public void EnterOrExitBattle(bool enter = false)
     {
         battleGo.SetActive(enter);
+        UIManager.Instance.ShowOrHideBattlePanel(enter);
     }
 
     /// <summary>
